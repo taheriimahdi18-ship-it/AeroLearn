@@ -12,7 +12,8 @@ planned but are not implemented.
 
 There are no third-party project dependencies. The displayed banner version is
 not evidence of a published release. See [PROJECT_STATUS.md](PROJECT_STATUS.md)
-for implementation evidence, successful Windows baseline tests, and pending CI acceptance.
+for implementation evidence, successful Windows baseline tests, and the first
+successful GitHub Actions run.
 
 ## Development environment
 
@@ -110,8 +111,11 @@ accuracy or GUI compatibility. Recorded results are in
 
 The CI workflow uses Windows Server 2025, x64 CPython 3.14.10, and the same
 standard-library test discovery. It installs no third-party project packages.
-A configured workflow is not evidence of a successful run; CI acceptance remains
-pending until an actual GitHub Actions run is recorded.
+The first push-triggered [CI run](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43956947531)
+succeeded for foundation commit `10390b6` (three tests passed). The interpreter
+patch is specified by the workflow; the exact runtime identification output was
+not visible in the supplied evidence. Hosted Windows evidence is separate from
+the owner's Windows 10 verification. Future runs must be evaluated individually.
 
 ## Contributions and project records
 

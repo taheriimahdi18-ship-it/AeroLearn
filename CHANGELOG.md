@@ -18,10 +18,14 @@ verified published release or tag.
 
 - Added a return type hint, function docstring, main guard, and final source-file
   newline to `main.py`; preserved the exact banner and `v0.1.0` version.
-- Updated project evidence and remaining M1.3 acceptance gates.
+- Updated project evidence and M1.3 closeout records.
 
 ### Validation status
 
 See `PROJECT_STATUS.md` for Linux and Windows execution evidence. The owner-side
-Windows runtime gate passed (3/3 tests). GitHub Actions execution and final
-M1.3 acceptance remain pending.
+Windows runtime gate passed (3/3 tests). The first GitHub Actions run also
+passed all three tests for foundation commit `10390b6`
+([Tests #1](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43956947531)).
+All M1.3 technical gates are evidenced; owner review and publication of the
+closeout documentation record final acceptance. No scientific or GUI validation
+is claimed.
