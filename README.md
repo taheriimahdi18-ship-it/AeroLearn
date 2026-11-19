@@ -5,15 +5,20 @@ project targeting a Windows desktop application.
 
 ## Current scope
 
-The current foundation prints the original `v0.1.0` console banner and provides
-three standard-library tests for direct invocation, script execution, and silent
-import. Aerospace calculations, a GUI, plotting, and distribution installers are
-planned but are not implemented.
+The console entry point preserves the original `v0.1.0` banner. The first
+scientific API computes scalar dynamic pressure from explicit SI density and
+relative flow speed. The suite contains three unchanged entry-point tests and
+ten scientific test methods, using only the standard library.
+
+M2 is implemented and its suite has passed on Codex Linux, in an independent
+Linux review, and in the owner Windows workspace. Publication, CI verification,
+and final acceptance remain pending. GUI,
+plotting, atmospheric models, and distribution installers are not implemented.
 
 There are no third-party project dependencies. The displayed banner version is
 not evidence of a published release. See [PROJECT_STATUS.md](PROJECT_STATUS.md)
-for implementation evidence, successful Windows baseline tests, and the first
-successful GitHub Actions run.
+for actual implementation evidence. Completed M0 and M1 milestones remain
+accepted; their Windows and CI results do not validate the new M2 calculation.
 
 ## Development environment
 
@@ -95,6 +100,31 @@ Python environment is working!
 
 The script should exit with code `0`. Importing `main` should produce no output.
 
+## Dynamic-pressure API
+
+From the repository root, use the canonical import:
+
+```python
+from aerolearn.aerodynamics.dynamic_pressure import dynamic_pressure
+
+pressure_pa = dynamic_pressure(density_kg_m3=1.225, speed_m_s=100.0)
+# Approximately 6125 Pa; no fixed decimal rounding is applied.
+```
+
+The function evaluates `q = 0.5 * rho * V²`, with density in kg/m³ and speed in
+m/s for the same local flow state. It returns Pa, emits no output, and supplies
+no default density or unit conversion. Exact built-in `int` and `float` inputs
+must be finite and nonnegative; booleans and numeric subclasses are rejected.
+Both inputs are validated before valid zero inputs return positive `0.0`.
+
+The scaled calculation avoids intermediate exponent overflow and premature
+underflow. Nonzero subnormals are accepted; final overflow and positive-input
+underflow to zero raise explicit exceptions. Rounding remains approximate,
+especially near floating-point endpoints. Dynamic pressure is not generally
+equal to compressible Pitot impact pressure or stagnation-minus-static pressure.
+Read the complete [scientific and API contract](docs/science/dynamic_pressure.md)
+for physical assumptions, exact exceptions, numerical limits, and reference cases.
+
 ## Tests
 
 Use explicit discovery from the repository root:
@@ -104,18 +134,30 @@ Use explicit discovery from the repository root:
 $LASTEXITCODE
 ```
 
-The acceptance target is exactly three discovered tests, three successes, no
-skips, and exit code `0`. These tests cover console behavior, not scientific
-accuracy or GUI compatibility. Recorded results are in
-[PROJECT_STATUS.md](PROJECT_STATUS.md).
+The current suite discovers exactly 13 methods: the three preserved console
+tests and ten dynamic-pressure methods with named subtests. The Codex handoff run
+on Linux / CPython 3.12.14 passed all 13 with no failures, errors, or skips and
+exit code `0`. Independent review of the handoff reproduced that result, then
+corrected an equality-based type check to use exact type identity and added two
+regression subcases within the existing type-validation method. The reviewed
+files passed all 13 methods on Linux / CPython 3.13.5 (105 scientific subtests,
+exit code `0`). The owner Windows suite, using the previously verified CPython 3.14.10 `.venv`,
+passed all 13 methods on 2026-11-19 in 0.109 seconds (exit code `0`; no failures,
+errors or skips reported), as shown in the supplied terminal screenshot. Numerical references and boundary checks verify the calculation;
+they do not establish experimental validity, sensor accuracy, or certification.
+Recorded results are in [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
 The CI workflow uses Windows Server 2025, x64 CPython 3.14.10, and the same
 standard-library test discovery. It installs no third-party project packages.
 The first push-triggered [CI run](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43956947531)
-succeeded for foundation commit `10390b6` (three tests passed). The interpreter
-patch is specified by the workflow; the exact runtime identification output was
-not visible in the supplied evidence. Hosted Windows evidence is separate from
-the owner's Windows 10 verification. Future runs must be evaluated individually.
+succeeded for foundation commit `10390b6`. The second
+[CI run](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43961821943)
+succeeded for closeout commit `0001a3f`, the M2 starting baseline. Public metadata
+confirms both successes; exact runtime identification and raw test output were
+not independently read from the restricted logs. Neither historical run contains
+M2 changes. The unchanged workflow will discover the expanded suite after owner
+publication; that new run must be verified before M2 acceptance. Hosted Windows
+evidence remains separate from the owner's Windows 10 verification.
 
 ## Contributions and project records
 
