@@ -1,19 +1,20 @@
 # AeroLearn — Project Status
 
-- Document revision: 3.4 (owner Windows verification; publication pending)
+- Document revision: 3.5 (M2 technical closeout; owner acceptance by publication)
 - Assessment date: 2026-11-19
 - Repository: https://github.com/taheriimahdi18-ship-it/AeroLearn
 - Verified M2 starting repository baseline: `main` at `0001a3f719b3b5d16424b925ae582098a7eaf31e`
 - Historical M1.3 starting baseline: `c03d6782abe7296c837bf5c5b24795c8cc757c93`
 - Historical pre-foundation source baseline: `ad8c6b13849bb462a1e632b834ebf5334eefa0fb`
-- Last verified published foundation commit: `10390b64aaa5078ccf542eb427b29fbc03939d24` (`main`)
+- Historical published foundation commit: `10390b64aaa5078ccf542eb427b29fbc03939d24` (`main`)
 - M1.3 CI evidence: [Tests #1, Windows Python 3.14](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43956947531/job/133613878750)
 - Published M1.3 closeout and CI #2: `0001a3f719b3b5d16424b925ae582098a7eaf31e`, [Tests #2](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43961821943)
-- M2 implementation commit: not created; owner review and publication pending
+- M2 implementation commit and last observed remote `main`: `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`
+- M2 CI evidence: [Tests #3](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676), [job log](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676/job/135758370798)
 - Displayed prototype version: `v0.1.0` (not a verified tag or release)
-- Current milestone: M2 — Dynamic Pressure Calculator (implemented locally; Windows suite passed; publication, CI, and final owner acceptance pending)
+- Current milestone: M2 — Dynamic Pressure Calculator (published; technical gates passed; closeout publication records owner acceptance). Next: M3 — Modular architecture and quality (planning only).
 
-This is a public technical summary of the more detailed revision 2.5 audit. M0, M1.1, M1.2, and M1.3 have been accepted by the owner. The M1.3 closeout was published in `0001a3f719b3b5d16424b925ae582098a7eaf31e`; its older conditional publication statements are superseded by that commit and owner acceptance. The owner separately approved the M2 scientific plan and implementation scope. Revision 3.2 was the Codex implementation handoff. Revision 3.3 records an independent review, a narrow input-type correction within the approved contract, and actual Linux evidence. Revision 3.4 adds owner-supplied Windows test evidence; it does not mark M2 accepted or authorize automated publication. The detailed historical record remains outside the public repository.
+This is a public technical summary of the more detailed revision 2.5 audit. M0, M1.1, M1.2, and M1.3 have been accepted by the owner. The M1.3 closeout was published in `0001a3f719b3b5d16424b925ae582098a7eaf31e`; its older conditional publication statements are superseded by that commit and owner acceptance. The owner separately approved the M2 scientific plan and implementation scope. Revision 3.2 was the Codex implementation handoff. Revision 3.3 records an independent review, a narrow input-type correction within the approved contract, and actual Linux evidence. Revision 3.4 recorded owner-supplied Windows test evidence and was published with the M2 implementation. Revision 3.5 records the staged review, implementation publication and successful M2 CI. M2 technical acceptance criteria are satisfied for the recorded scope; owner approval and publication of this closeout record formal milestone acceptance. The detailed historical record remains outside the public repository.
 
 ## 1. Mission
 
@@ -30,14 +31,15 @@ AeroLearn is an open-source Python aerospace engineering desktop application in 
 | M1.3 published foundation | Owner terminal screenshot: `main` and live remote `refs/heads/main` both at `10390b64aaa5078ccf542eb427b29fbc03939d24`; clean working tree after push. Commit subject: Establish minimal software foundation and baseline tests. |
 | M1.3 starting baseline | Codex fetched `origin/main`, verified `c03d6782abe7296c837bf5c5b24795c8cc757c93`, and created an isolated checkout at that exact commit with a clean working tree before editing. The older `ad8c6b1` checkout was not used for implementation. |
 | M2 starting baseline | Codex fetched and verified remote `main` at `0001a3f719b3b5d16424b925ae582098a7eaf31e`, read all required baseline files, and created a separate clean checkout at that exact commit. The three baseline tests passed before edits. |
+| M2 published implementation | Owner terminal screenshots: local HEAD and live remote `refs/heads/main` both at `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`, clean working tree after successful push. Commit subject: Implement and validate dynamic pressure calculator. |
 | Git | Git for Windows 2.56.1.windows.1 executed successfully in PowerShell |
 | Windows environment | Windows 10 Pro 22H2, build 19045, x86-64; CPython 3.14.10 and 3.15.2 installed side by side; both standard GIL-enabled 64-bit builds; VS Code Python extensions present |
 | Original source preservation | Original script copied to the clone without overwriting; source and destination SHA-256 matched |
 | Codex web access | Initial public clone and audits succeeded. All six tracked files were inspected at the exact M1.3 starting baseline; `AGENTS.md` and this status document were read in full before implementation. |
 | Codex authorization | Public read access demonstrated; dedicated environment and authenticated write access not established or required; second audit inspected fetched `origin/main` at `f2d6f0e`, while the Codex checkout remained at `ad8c6b1` |
-| Documentation | Revision 2.6 and `AGENTS.md` were published in `f2d6f0e330e21923a7fe9923fffa6211866a6eec`. Revision 2.8 was published in `c03d6782abe7296c837bf5c5b24795c8cc757c93`. Revision 2.9 was the implementation handoff; revision 3.0 recorded Windows verification and was published with the foundation in `10390b64aaa5078ccf542eb427b29fbc03939d24`. Revision 3.1 was published in `0001a3f719b3b5d16424b925ae582098a7eaf31e` with a separate successful CI run. Revision 3.2 was the uncommitted Codex M2 handoff; revision 3.3 was the reviewed handoff; revision 3.4 adds the Windows test evidence. M2 publication remains pending. |
+| Documentation | Revision 2.6 and `AGENTS.md` were published in `f2d6f0e330e21923a7fe9923fffa6211866a6eec`. Revision 2.8 was published in `c03d6782abe7296c837bf5c5b24795c8cc757c93`. Revision 2.9 was the implementation handoff; revision 3.0 recorded Windows verification and was published with the foundation in `10390b64aaa5078ccf542eb427b29fbc03939d24`. Revision 3.1 was published in `0001a3f719b3b5d16424b925ae582098a7eaf31e` with a separate successful CI run. Revision 3.2 was the uncommitted Codex M2 handoff; revision 3.3 was the reviewed handoff; Revision 3.4 recorded Windows test evidence and was published in `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`. Revision 3.5 records M2 technical closeout and is intended for owner-approved documentation-only publication. |
 
-Evidence is based on owner-supplied Git/PowerShell screenshots, the inspected initial ZIP, and the Codex web audit report. The live baseline was verified by the owner at the time of the recorded push and independently reported by Codex; this is not a continuous guarantee of the current remote HEAD.
+Evidence is based on owner-supplied Git/PowerShell screenshots, the inspected initial ZIP, and the Codex web audit report. The M2 starting baseline was independently reported by Codex; the newer M2 implementation baseline was verified by the owner using live Git commands and CI screenshots. Direct remote access for the closeout review was unavailable. These observations are not a continuous guarantee of the current remote HEAD.
 
 ### Tracked files at the historical M1.3 starting baseline (`c03d6782`)
 
@@ -74,6 +76,36 @@ AeroLearn/
 
 The ten-file tree is derived from the starting baseline and the four additions in the owner’s commit output. The local `.venv` and generated bytecode remain excluded.
 
+### Published M2 tree
+
+```text
+AeroLearn/
+├── .gitattributes
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── .gitignore
+├── AGENTS.md
+├── CHANGELOG.md
+├── LICENSE
+├── PROJECT_STATUS.md
+├── README.md
+├── aerolearn/
+│   ├── __init__.py
+│   └── aerodynamics/
+│       ├── __init__.py
+│       └── dynamic_pressure.py
+├── docs/
+│   └── science/
+│       └── dynamic_pressure.md
+├── main.py
+└── tests/
+    ├── test_main.py
+    └── test_dynamic_pressure.py
+```
+
+The 15-file tree follows from the ten-file foundation and the five M2 additions shown in the owner’s staged and commit output. No local virtual environment or generated bytecode is tracked.
+
 ## 3. Test evidence
 
 | Check | Environment | Observed or reported result |
@@ -82,23 +114,23 @@ The ten-file tree is derived from the starting baseline and the four additions i
 | `python main.py` | Codex web, Linux x86_64, Python 3.12.14 | Codex reported expected banner, exit code 0, empty stderr |
 | `./.venv/Scripts/python.exe main.py` (PowerShell equivalent: `.\.venv\Scripts\python.exe main.py`) | Owner Windows workspace; CPython 3.14.10 in `.venv` | Owner screenshot: expected banner, exit code 0 |
 | VS Code Run Python File in Terminal | Owner Windows workspace; selected `.venv` (3.14.10) | Owner screenshot: explicit virtual-environment executable, activated prompt, expected banner and return to prompt; no error displayed |
-| Dynamic-pressure calculation | Current local M2 implementation | Implemented; numerical and API tests passed in Codex Linux, independent Linux review, and the owner Windows workspace; experimental validation and final M2 acceptance are not claimed |
+| Dynamic-pressure calculation | Published M2 implementation | Implemented; numerical and API tests passed in the reported Linux environments, owner Windows workspace and hosted Windows CI (see variant-specific evidence below); experimental validation is not claimed |
 | M1.3 automated tests | Codex Linux x86-64, CPython 3.12.14 | Three tests passed, zero failures/errors/skips, exit code 0; see section 6 for the exact command |
 | M1.3 script smoke test | Codex Linux x86-64, CPython 3.12.14 | `python main.py` printed the original banner and exited 0 |
 | M1.3 independent review tests | Linux, standard system CPython 3.13.5 | Three tests passed, zero failures/errors/skips, exit code 0; script also exited 0 with original banner and empty stderr |
 | Updated M1.3 files on Windows | Owner Windows 10 Pro 22H2 / CPython 3.14.10 in `.venv` | Owner screenshot: script exit code 0; all three tests passed in 0.150 seconds, no failures/errors/skips, exit code 0 |
 | GUI and installer | Current implementation | Not implemented or validated |
 | GitHub Actions | Hosted Windows job `Windows Python 3.14`; configured Windows Server 2025, CPython 3.14.10 x64 | Owner screenshots: Tests #1 succeeded; all three named tests reported `ok`, `Ran 3 tests in 0.054s`, `OK`; no skips/errors/failures reported. Exact runtime patch/build not visible in the collapsed identification step. |
-| Published closeout CI #2 | Commit `0001a3f719b3b5d16424b925ae582098a7eaf31e` | Public metadata independently confirms completed/success; raw test and runtime output were not independently read |
+| Published closeout CI #2 | Commit `0001a3f719b3b5d16424b925ae582098a7eaf31e` | Earlier public metadata and owner screenshots confirm success; owner log showed 3/3 in 0.055 seconds, `OK`. Exact runtime patch was not visible |
 | Pre-M2 baseline tests | Codex Linux x86-64, CPython 3.12.14 | 3 tests passed in 0.028 seconds before source edits; no failures/errors/skips; exit code 0 |
 | Final original M2 handoff suite | Codex Linux x86-64, CPython 3.12.14 | 13 methods passed in 0.036 seconds; no failures/errors/skips; exit code 0 |
 | Reviewed M2 suite | Independent Linux x86-64, CPython 3.13.5 | 13 methods passed in 0.027 seconds after the type-identity correction; 105 named scientific subtests; no failures/errors/skips; exit code 0 |
 | Reviewed M2 normal-result oracle | Independent Linux x86-64, CPython 3.13.5 | 5,000 deterministic exact-rational comparisons passed; maximum observed distance 1 ULP; exit code 0 |
 | Independent M2 numerical/API checks | Codex Linux x86-64, CPython 3.12.14 | 39/39 passed; maximum observed distance for eight selected normal rational oracles was 1 ULP, within the four-ULP tolerance |
 | M2 owner Windows suite | Previously verified Windows 10 Pro 22H2 / CPython 3.14.10 `.venv` | Owner screenshot dated 2026-11-19: `Ran 13 tests in 0.109s`, `OK`, exit code 0; no failures, errors or skips reported |
-| M2 CI | Future published M2 workflow run | Pending; neither historical CI run includes the new M2 files |
+| M2 CI | Published commit `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`; hosted Windows, CPython 3.14.10 AMD64 | Owner screenshots: [Tests #3](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676/job/135758370798), 13/13 methods passed in 0.054 seconds, `OK`; no failures, errors or skips reported; workflow success |
 
-The historical smoke and M1.3 unit tests establish the recorded console and import behavior. The M2 tests verify selected scientific references, properties, input contracts, and numerical boundaries on Linux and the owner Windows workspace. These results do not establish final M2 acceptance, exhaustive numerical accuracy, experimental validity, general Python version support, GUI compatibility, or release readiness.
+The historical smoke and M1.3 unit tests establish the recorded console and import behavior. The M2 tests verify selected scientific references, properties, input contracts, and numerical boundaries on Linux, the owner Windows workspace and hosted Windows CI. These results support M2 technical acceptance for the tested scope; they do not establish exhaustive numerical accuracy, experimental validity, general Python version support, GUI compatibility, or release readiness.
 
 ### Historical unintegrated lesson
 
@@ -111,7 +143,7 @@ The M2 audit examined the non-shallow history reachable from `0001a3f719b3b5d164
 - Use a modular Python architecture and separate the scientific core from presentation and plotting.
 - Use explicit SI units internally, documented conversions, physical assumptions, validity ranges and reference equations.
 - Planned GUI: PySide6. Planned numerical and plotting tools: NumPy, SciPy and Matplotlib, only as required and after compatibility verification.
-- Use type hints, clear English technical documentation and independent automated tests. The unchanged M1.3 CI workflow has two successful historical push-triggered runs; a new run must verify the expanded M2 suite after publication.
+- Use type hints, clear English technical documentation and independent automated tests. The unchanged M1.3 CI workflow has three successful recorded push-triggered runs, including the expanded 13-method M2 suite in Tests #3.
 - Keep previously approved behavior unless a justified, reviewed change is needed.
 - GitHub is the source of truth for committed source. Codex in ChatGPT on the web is the chosen coding workspace; the owner manually transfers approved complete files into VS Code, tests on Windows and controls Git publication.
 - Follow repository agent instructions in `AGENTS.md`, now published in the repository.
@@ -237,9 +269,9 @@ No scientific calculations, GUI, distribution installer, or third-party runtime 
 
 ### Independently verified second CI run
 
-Public GitHub run and job metadata confirm [Tests #2](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43961821943) completed successfully for closeout commit `0001a3f719b3b5d16424b925ae582098a7eaf31e`, triggered by a push to `main`. Its single `Windows Python 3.14` job, labeled `windows-2025`, and its interpreter-identification and test steps succeeded. Run #1 was independently confirmed successful for its own foundation commit. Raw logs were unavailable without authentication in the earlier audit; exact interpreter output and raw test counts were not independently read. Both successful runs predate M2, and neither verifies the M2 code.
+Public GitHub run and job metadata confirm [Tests #2](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43961821943) completed successfully for closeout commit `0001a3f719b3b5d16424b925ae582098a7eaf31e`, triggered by a push to `main`. Its single `Windows Python 3.14` job, labeled `windows-2025`, and its interpreter-identification and test steps succeeded. Run #1 was independently confirmed successful for its own foundation commit. Raw logs were unavailable without authentication in the earlier audit; exact interpreter output and raw test counts were not independently read. The owner subsequently supplied the #2 test log: all three tests passed, `Ran 3 tests in 0.055s`, `OK`; exact runtime patch was not visible. Both successful runs predate M2, and neither verifies the M2 code.
 
-## 7. M2 local implementation and verification
+## 7. M2 implementation, publication and verification
 
 ### Implemented scope
 
@@ -286,8 +318,8 @@ the previously delivered M1.3 foundation and closeout snapshots. The Git blob ha
 the preserved `main.py` and `tests/test_main.py` matched the owner-provided staged
 Git output (`a676a0cc7f9c990b29e0707453c53194a4cf9ecb` and
 `1d734edb5dcb84f7a61d96d34b3eea7a0054910d`, respectively). Direct live GitHub
-access in the review environment failed; the current remote baseline still needs
-owner-side confirmation before applying the handoff.
+access in the review environment failed; owner-side confirmation and publication
+were subsequently observed as described below.
 
 Environment: standard CPython 3.13.5, Linux 6.18.57 x86-64, glibc 2.41.
 The baseline passed 3/3 methods in 0.036 seconds; the extracted original M2
@@ -318,23 +350,46 @@ OK
 0
 ```
 
-All 13 test methods passed (ten scientific methods and three preserved foundation methods), with no failures, errors or skips reported. The screenshot shows five expected new files and three modified documentation files, no unexpected tracked changes, and no output from `git diff --check` for the unstaged tracked diff. The screenshot does not show a fresh interpreter identification, the standalone API invocation output, or a fresh remote HEAD check. The recorded environment is based on the previously verified setup, and the standalone API smoke result and exact staged file identities remain to be checked. This is owner-supplied evidence, not an independently executed Windows test.
+All 13 test methods passed (ten scientific methods and three preserved foundation methods), with no failures, errors or skips reported. The screenshot shows five expected new files and three modified documentation files, no unexpected tracked changes, and no output from `git diff --check` for the unstaged tracked diff. The screenshot does not show a fresh interpreter identification, the standalone API invocation output, or a fresh remote HEAD check. The recorded environment is based on the previously verified setup. The staged file identities were subsequently checked; a separate standalone API smoke output is not visible in the supplied screenshots. The passed reference-value and API tests provide direct calculation evidence. This is owner-supplied evidence, not an independently executed Windows test.
 
-### Pending M2 acceptance
+### Owner-side staged review and publication (revision 3.5)
 
-1. Reconfirm the local and live remote baseline, verify the reviewed source/test files and standalone API smoke result, and review the scientific documentation and complete staged diff, including new files.
-2. The owner controls all commits and publication. No future implementation commit hash is claimed.
-3. The unchanged CI workflow must execute the expanded M2 suite successfully; record that run against the actual M2 commit, separately from the historical M1.3 runs.
-4. The owner reviews the evidence and accepts M2. Until then, M2 remains in progress.
+On 2026-11-19, owner-supplied PowerShell screenshots showed the approved eight-file staged change (five added, three modified; 910 insertions and 48 deletions). `git diff --cached --check` showed no diagnostics. The preceding review matched the eight staged Git blob identities to the reviewed implementation and Windows-documentation bundles; the seven protected files were not modified. The three revision 3.4 documentation blob identities were also matched to the archived bundle during this closeout review.
+
+The owner committed `Implement and validate dynamic pressure calculator` and pushed it to `main`. The post-push `git status` reported an up-to-date branch and clean working tree. `git rev-parse HEAD` and `git ls-remote origin refs/heads/main` both displayed `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`. This is the last observed published implementation baseline, not the hash of this subsequent documentation-only closeout.
+
+### Actual M2 GitHub Actions verification (revision 3.5)
+
+Owner-supplied screenshots on 2026-11-19 show [workflow run #3](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676) and its [job log](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676/job/135758370798).
+
+- Workflow: `Tests`; push to `main`; commit `d753636`; status Success; total duration 20 seconds.
+- Job: `Windows Python 3.14`; succeeded in 15 seconds. The preserved workflow specifies `windows-2025` (hosted Windows Server, not the owner's Windows 10 installation).
+- `Identify Python` displayed `Python 3.14.10 (tags/v3.14.10:b703b2c, Oct 25 2026, 17:36:52) [MSC v.1944 64 bit (AMD64)]`.
+- `Run tests` executed `python -m unittest discover -s tests -p "test_*.py" -v`. Each of the ten scientific and three foundation methods reported `ok`.
+- The log ended with `Ran 13 tests in 0.054s` and `OK`; no failures, errors or skips were reported. The successful step and job establish successful execution; a separate numeric exit-code line was not displayed.
+- Evidence is from the owner-provided Git and CI screenshots, not an independently fetched raw log. The reported earlier 5,000-case Linux oracle check is separate from this CI run; CI does not execute that external harness.
+
+### M2 acceptance gates
+
+| Gate | Evidence status |
+| --- | --- |
+| Scientific specification, API and architecture | Reviewed and approved for the M2 scope |
+| Implementation and independent numerical verification | Passed for the recorded cases; 13 methods and 5,000 sampled normal-result oracles after the independent correction |
+| Owner Windows verification | Passed; 13/13, exit code 0 |
+| Staged review and implementation publication | Passed; eight expected files, reviewed identities, clean synchronized `d753636` |
+| Published CI verification | Passed; Tests #3, 13/13, Python 3.14.10 AMD64 |
+| Final owner closeout | Technical gates passed; owner approval and publication of revision 3.5 record formal acceptance |
+
+A separate owner-side standalone API smoke result was requested but not captured in the supplied evidence; the successful automated reference tests cover the calculation. This optional supplementary check is not a separate release or experimental validation gate. No M3 implementation is authorized by this closeout.
 
 ## 8. Open issues and risks
 
 | Issue | Next action |
 | --- | --- |
-| M2 acceptance | Local implementation, Linux numerical checks, and owner Windows suite passed; final diff review, publication, new CI, and owner acceptance remain pending |
-| CI scope | Two historical push-triggered runs succeeded; neither includes M2. Exact runtime output was not independently read. PR-triggered execution and broader matrices remain untested |
+| M2 acceptance | Technical gates passed; implementation published and CI #3 successful; owner approval and closeout documentation publication record formal acceptance |
+| CI scope | Three recorded push-triggered runs succeeded; #3 includes M2 with exact Python 3.14.10 AMD64 visible in owner screenshots. PR-triggered execution and broader matrices remain untested |
 | Packaging metadata and application layout | Minimal scientific package approved for M2; build/distribution infrastructure and larger refactors remain deferred |
-| Windows Python and Codex Python versions differ | M2 has Codex Linux CPython 3.12.14, independent Linux CPython 3.13.5, and owner Windows CPython 3.14.10 environment evidence; hosted M2 CI remains pending |
+| Windows Python and Codex Python versions differ | M2 has Codex Linux CPython 3.12.14, independent Linux CPython 3.13.5, and owner Windows CPython 3.14.10 environment evidence; hosted M2 CI also passed with Python 3.14.10 AMD64 |
 | Floating-point range and accuracy | Documented computed-result exceptions and subnormal behavior; no exact classification of all endpoint inputs or universal relative-error bound |
 | Planned scientific/GUI dependencies not runtime-validated | Metadata reviewed by Codex; defer installation until required, verify full resolution and runtime behavior then |
 | Windows 10 lifecycle and future Qt support | Review OS security support and Windows 11 migration; decide minimum OS before GUI work |
@@ -353,7 +408,7 @@ Earlier Git availability, workspace synchronization and Python extension setup i
 | M1.1 — Documentation | Review and publish public status and agent rules; documentation-only diff and verified commit | Complete; verified push of `f2d6f0e` |
 | M1.2 — Python environment | Inventory interpreters, verify compatibility, approve a target, establish reproducible virtual environment and smoke test | Accepted by owner; environment record published in `c03d6782` |
 | M1.3 — Software foundation | Preserve console output, add safe import behavior, baseline tests, documentation, LF policy and minimal CI | Accepted; foundation `10390b6`, closeout `0001a3f`, Windows baseline tests and both historical CI runs succeeded |
-| M2 — Dynamic Pressure Calculator | Independent scientific function, SI units, reference cases, physical limits, tests and Windows verification | Implemented in reviewed handoff; 13 methods passed on independent Linux and owner Windows, with 5,000 additional independent normal-result oracle checks on Linux; publication, CI, and owner acceptance pending |
+| M2 — Dynamic Pressure Calculator | Independent scientific function, SI units, reference cases, physical limits, tests and Windows verification | Published in `d753636`; technical gates passed (13 methods on owner Windows and hosted CI, plus independent Linux verification); owner-approved closeout publication records final acceptance |
 | M3 — Modular architecture and quality | Stabilize package boundaries, CI, versioning and changelog; verify reproducibility | Planned |
 | M4 — GUI | Minimal PySide6 interface connected to validated core; Windows UI smoke test | Planned |
 | M5 — Standard atmosphere | Authoritative model, documented altitude convention and domain, reference/boundary tests | Planned |
@@ -362,9 +417,9 @@ Earlier Git availability, workspace synchronization and Python extension setup i
 
 ## 10. Immediate next action
 
-Reconfirm the local and live remote M2 starting baseline, verify the reviewed file identities and standalone API result, and review the complete staged eight-file M2 change. The owner Windows 13-method suite has passed. Leave commits and publication to the owner, then verify the new CI run against the actual M2 commit. Do not mark M2 complete before its acceptance gates are satisfied.
+Reconfirm local HEAD and live remote `main` at `d75363678eef6d4f6ec3e004dfeb138b09d5b4c9` and a clean working tree before applying revision 3.5. Review and publish only the three closeout documentation files with owner approval; check the resulting push-triggered CI. This does not change the scientific implementation.
 
-After M2 acceptance, review the next approved roadmap scope separately. GUI, plotting, atmosphere, Mach/Pitot conversion, lift/drag, vectorization, packaging, and third-party dependency adoption are not authorized by this M2 implementation.
+After M2 acceptance, start M3 with a read-only architecture and quality review of the exact published baseline. Evaluate minimal package boundaries, reuse of scientific validation, versioning, reproducibility and CI scope without unnecessary refactoring; propose acceptance criteria before implementing changes. GUI, plotting, atmosphere, Mach/Pitot conversion, lift/drag, vectorization, packaging, and third-party dependency adoption are not authorized by this M2 implementation.
 
 ## 11. Maintaining this document
 

@@ -29,6 +29,8 @@ verified published release or tag.
 - Updated current test instructions to 13 methods and recorded M2 implementation
   evidence separately from accepted M0 and M1 milestones.
 - Recorded the published M1.3 closeout and its second successful CI run.
+- Recorded the M2 implementation publication and successful third CI run;
+  revision 3.5 documents the technical closeout and next planned milestone.
 - Independent M2 review: enforce exact built-in type identity rather than
   overloaded class equality; add regression subcases for both input positions.
 
@@ -50,6 +52,10 @@ evidence and limitations.
 
 On 2026-11-19, the owner Windows suite passed 13/13 methods in 0.109 seconds
 with exit code `0` and no reported failures, errors or skips in the previously
-verified CPython 3.14.10 `.venv`. Owner publication, new CI execution, and final
-owner acceptance remain pending. These numerical checks do not constitute experimental validation
-or operational certification. No GUI validation is claimed.
+verified CPython 3.14.10 `.venv`. The reviewed implementation was published in
+`d75363678eef6d4f6ec3e004dfeb138b09d5b4c9`. Owner-supplied Git and CI screenshots show a clean synchronized
+`main` and successful [Tests #3](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676/job/135758370798) on hosted Windows with Python 3.14.10
+AMD64: 13/13 methods passed in 0.054 seconds, `OK`, with no failures, errors or
+skips reported. M2 technical gates are satisfied; owner-approved closeout
+publication records final acceptance. These numerical checks do not constitute
+experimental validation or operational certification. No GUI validation is claimed.

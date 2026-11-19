@@ -10,10 +10,13 @@ scientific API computes scalar dynamic pressure from explicit SI density and
 relative flow speed. The suite contains three unchanged entry-point tests and
 ten scientific test methods, using only the standard library.
 
-M2 is implemented and its suite has passed on Codex Linux, in an independent
-Linux review, and in the owner Windows workspace. Publication, CI verification,
-and final acceptance remain pending. GUI,
-plotting, atmospheric models, and distribution installers are not implemented.
+M2 is published in commit [`d753636`](https://github.com/taheriimahdi18-ship-it/AeroLearn/commit/d75363678eef6d4f6ec3e004dfeb138b09d5b4c9).
+The scientific suite passed on Codex Linux, in an independent Linux review, in
+the owner Windows workspace, and in hosted Windows CI. Technical acceptance
+gates are satisfied; owner-approved publication of the closeout documentation
+records final milestone acceptance. M3 (modular architecture and quality) is
+planned. GUI, plotting, atmospheric models, and distribution installers are not
+implemented.
 
 There are no third-party project dependencies. The displayed banner version is
 not evidence of a published release. See [PROJECT_STATUS.md](PROJECT_STATUS.md)
@@ -153,11 +156,13 @@ The first push-triggered [CI run](https://github.com/taheriimahdi18-ship-it/Aero
 succeeded for foundation commit `10390b6`. The second
 [CI run](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/43961821943)
 succeeded for closeout commit `0001a3f`, the M2 starting baseline. Public metadata
-confirms both successes; exact runtime identification and raw test output were
-not independently read from the restricted logs. Neither historical run contains
-M2 changes. The unchanged workflow will discover the expanded suite after owner
-publication; that new run must be verified before M2 acceptance. Hosted Windows
-evidence remains separate from the owner's Windows 10 verification.
+confirmed both successes in the earlier audit; owner screenshots also show three
+passing tests in each run. Neither historical run contains M2 changes. The third
+[CI run](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676)
+passed for M2 commit `d753636`. The owner-supplied [job log](https://github.com/taheriimahdi18-ship-it/AeroLearn/actions/runs/44580173676/job/135758370798)
+shows Python 3.14.10, AMD64 (64-bit), and all 13 tests passing in 0.054 seconds
+with `OK`. Hosted Windows evidence remains separate from the owner's Windows 10
+verification. PR-triggered CI and broader platform matrices remain unverified.
 
 ## Contributions and project records
 
